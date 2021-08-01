@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+void swap(int x,int y){
+    int temp=x;
+    x=y;
+    y=temp;
+}
+void swapbyaddress(int *x,int *y){
+    int temp=*x;
+    *x=*y;
+   *y=temp;
+}
+void swapbyrefernce(int &x,int &y){
+   int temp=x;
+    x=y;
+    y=temp;
+}
+
+int main(){
+    
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("final.txt","w",stdout);
+    #endif
+    int a=10;
+    int b=20;
+    int a1=10;
+    int b1=20;
+    //pass by value
+    swap(a,b);
+    cout<<a<<" "<<b<<endl;
+    //pass by address
+    swapbyaddress(&a,&b);
+    cout<<a<<" "<<b<<endl;
+    //pass by reference
+    swapbyrefernce(a1,b1);
+    cout<<a<<" "<<b<<endl;
+
+    
+
+}
