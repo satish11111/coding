@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+struct rectangle{
+    int l;
+    int b;
+};
+
+int main(){
+    
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("final.txt","w",stdout);
+    #endif
+    struct rectangle r={10,5};
+    cout<<r.b<<endl<<r.l<<endl;
+
+    rectangle *p=&r;
+    cout<<p->b<<endl<<p->l<<endl;
+
+}
