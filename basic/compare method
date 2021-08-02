@@ -1,0 +1,15 @@
+#include<iostream>
+#include<climits>
+#include<algorithm>
+using namespace std;
+bool compare(int a,int b){
+	return a<b;
+}
+int main(){
+	int  arr[]={22,188,144,11,211,441};
+	int size=sizeof(arr)/sizeof(int);
+    sort(arr,arr+size,compare);
+    for(int x:arr){
+    	cout<<x<<endl;
+	}
+}
