@@ -1,0 +1,29 @@
+#include<iostream>
+#include<climits>
+#include<algorithm>
+using namespace std;
+
+int main(){
+	int  arr[]={-4,1,3,-2,6,2,-8,-9,4};
+	int size=sizeof(arr)/sizeof(int);
+	int maxsum=0;
+	int currentsum=0;
+	int left,right=0;
+    for(int i=0;i<size;i++){
+    	for(int j=i+1;j<size;j++){
+    		currentsum=0;
+    		for(int k=i;k<j;k++){
+    			currentsum+=arr[k];
+			}
+			if(currentsum>maxsum){
+				maxsum=currentsum;
+				left=i;
+				right=j;
+			}
+		}
+	}
+	cout<<maxsum<<endl;
+	for(int i=left;i<=right;i++){
+		cout<<arr[i]<<" ";
+	}
+}
