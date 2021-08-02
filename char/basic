@@ -1,0 +1,27 @@
+#include<iostream>
+#include<climits>
+#include<algorithm>
+using namespace std;
+
+int main(){
+   char ch[45];
+   char chr[]={'a','b','c'};
+   char chra[10]={'a','b','c','d','e','f','\0'};
+   //contain of array
+   cout<<chra<<endl;
+   for(char c:chr){
+   	cout<<c<<endl;	
+   }
+//   char c[100];
+//   cin>>c;
+//   cout<<c;
+   
+   char c[]="satish";
+   cout<<sizeof(c)<<endl;
+   char carr[]={'s','a','t','i','s','h'};
+   cout<<sizeof(carr)<<endl;
+   
+
+
+
+}
