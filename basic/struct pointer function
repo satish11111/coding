@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+struct rectangle{
+    int l;
+    int b;
+};
+int area(struct rectangle r){
+    return r.b*r.l;
+}
+void display(struct rectangle *r){
+    r->l=90;
+}
+int main(){
+    
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("final.txt","w",stdout);
+    #endif  
+    
+    struct rectangle rec={10,20};
+   cout<<area(rec);
+    cout<<rec.b<<endl<<rec.l<<endl;
+    display(&rec);
+    cout<<rec.b<<endl<<rec.l<<endl;
+    
+
+}
