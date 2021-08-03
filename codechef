@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Codechef {
+
+	public static void main(String[] args) {
+		try{
+		      int testcase=0;
+		      Scanner sc=new Scanner(System.in);
+		      testcase=sc.nextInt();
+		      while(testcase!=0){
+		        //code
+		      }
+		      
+		  }catch(Exception e){
+		      return;
+		  }
+
+	}
+
+}
