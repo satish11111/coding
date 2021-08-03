@@ -1,0 +1,86 @@
+#include<iostream>
+#include<cstring>
+#include<algorithm>
+#include<string>
+using namespace std;
+int main(){
+    
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("final.txt","w",stdout);
+    #endif  
+   string s0;
+   string s1("hello");
+   string s2="Hello world";
+   string s3(s2);
+   string s4=s3;
+   char a[]={'a','b','c'};
+   string s5(a);
+
+   cout<<s0<<endl;
+   cout<<s1<<endl;
+   cout<<s2<<endl;
+   cout<<s3<<endl;
+   cout<<s4<<endl;
+   cout<<s5<<endl;
+
+   if(s0.empty()){
+       cout<<"empty"<<endl;
+   }
+    s0.append("i love c++");
+    
+    s0=s0+"love dbms";
+    cout<<s0<<endl; 
+
+    //remove
+    s0.clear();
+    cout<<s0.length()<<endl;
+
+    //compare
+    s0="Apple";
+    s1="Mango";
+
+    cout<<s0.compare(s1)<<endl;
+    cout<<s0.compare(s0)<<endl;
+
+    if(s1>s0){
+        cout<<s1;
+    }else{
+        cout<<s0;
+    }
+    cout<<endl;
+
+   if (s1>s0){
+       cout<<"mango is lexographical greater"<<endl;
+   }
+   cout<<s0[0]<<endl;
+   string s="i want to have apple juice";
+   int index=s.find("apple");
+   cout<<index<<endl;
+
+   //remove
+   string word="apple";
+   int len=word.length();
+   s.erase(index,len+1);
+    cout<<s<<endl;
+   
+   //
+   for(int i=0;i<s.length();i++){
+       cout<<s[i]<<": ";
+   }
+cout<<endl;
+   for(auto it=s.begin(); it!=s.end();it++){
+        cout<<(*it)<<",";
+   }
+   cout<<endl;
+   for(auto c:s){
+      cout<<c<<", ";
+   }
+  string::iterator it;
+  for(it=s.begin();it!=s.end();it++){
+      cout<<*it;
+  }
+
+}
+
+
