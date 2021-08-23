@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+void towerofhanoi(int disk,int from ,int broker,int to){
+    if(disk>0){
+        towerofhanoi(disk-1,from,to,broker);
+        cout<<from<<"->"<<to<<endl;
+        towerofhanoi(disk-1,broker,from,to);
+    }
+}
+int main(){
+    towerofhanoi(3,1,2,3);
+}
