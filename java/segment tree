@@ -1,0 +1,69 @@
+class segment{
+	class node{
+		int data;
+		node left;
+		node right;
+		int startinterval;
+		int endinterval;
+	}
+	node root;
+	public segment(int arr[]) {
+		this.root=constructree(arr,0,arr.length-1);
+	}
+	public node constructree(int arr[],int st,int end) {
+		if(st==end) {
+			node leafnode=new node();
+			leafnode.data=arr[st];
+			leafnode.startinterval=st;
+			leafnode.endinterval=end;
+			return leafnode;
+		}
+		node nn=new node();
+		nn.startinterval=st;
+		nn.endinterval=end;
+		int mid=(st+end)/2;
+		nn.left=this.constructree(arr, st,mid);
+		nn.right=this.constructree(arr, mid+1, end);
+		nn.data=nn.left.data+nn.right.data;
+		
+		return nn;
+	}
+	public void calldisplay() {
+		display(root);
+	}
+	public void display(node nn) {
+		String str=" ";
+		if(nn.left!=null) {
+			str=str+"interval=["+nn.left.startinterval+" -"+nn.left.endinterval+"] and data="+nn.left.data+"=>";
+		}else {
+			str=str+"no left child";
+		}
+		str=str+"interval=["+nn.startinterval+" -"+nn.endinterval+"] and data="+nn.data+"=>";
+		
+		if(nn.right!=null) {
+			str=str+"<=data ="+nn.right.startinterval+" -"+nn.right.endinterval+"] and data="+nn.right.data+"=>";
+		}else {
+			str=str+"no right child";
+		}
+		System.out.println(str);
+		
+		if(nn.left!=null) {
+			display(nn.left);
+		}
+		if(nn.right!=null) {
+			display(nn.right);
+		}
+	}
+	
+}
+public class segmenttree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+             int arr[]= {3,8,7,6,-2,-8,4,9};
+             segment ss=new segment(arr);
+             ss.calldisplay();
+       
+	}
+
+}
