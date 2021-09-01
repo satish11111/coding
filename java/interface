@@ -1,0 +1,33 @@
+
+public interface stack {
+	public void push(int item);
+
+	int size = 10;
+	//int size not possilby
+
+	public int pop();
+}
+
+public class interfacesdeo implements stack {
+
+	public static void main(String args[]) {
+
+	}
+
+	@Override
+	public void push(int item) {
+		// TODO Auto-generated method stub
+		System.out.println("satish");
+		System.out.println(stack.size);
+	}
+
+	@Override
+	public int pop() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void top() {
+		return;
+	}
+}
