@@ -1,0 +1,60 @@
+import java.util.*;
+class queuepratice{
+	int arr[];
+	int front;
+	int rear;
+	int capacity;
+	
+	queuepratice(int size){
+		arr=new int[size];
+		front=-1;
+		rear=-1;
+		capacity=size;
+	}
+	public void enqeue(int item) {
+		if(rear==capacity-1) {
+			System.out.println("no space");
+		}else {
+			if(front==-1) {
+				front++;
+			}
+			rear++;
+			arr[rear]=item;
+			
+		}
+	}
+	public void deqeue() {
+		if(rear==-1) {
+			System.out.println("no element");
+		}else {
+			//one element
+			if(front>=rear) {
+				front=-1;
+				rear=-1;
+			}else {
+				front++;
+			}
+		}
+	}
+	public void display() {
+		for(int i=front;i<=rear;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+	
+}
+public class queue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		queuepratice qk=new queuepratice(5);
+		qk.enqeue(10);
+		qk.enqeue(100);
+		qk.enqeue(1000);
+		qk.enqeue(10000);
+		qk.enqeue(100000);
+		qk.deqeue();
+		qk.display();
+	}
+
+}
