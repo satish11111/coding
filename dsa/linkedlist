@@ -1,0 +1,101 @@
+
+class linkedclass {
+	class node {
+		int data;
+		node next;
+
+		node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	node head;
+
+	public void insertbegin(int item) {
+		node new_node = new node(item);
+		if(head==null) {
+			new_node.next = head;
+			head = new_node;
+		}else {
+			node temp=head;
+			head=new_node;
+			new_node.next=temp;
+		}
+		
+	}
+
+	public void insertend(int item) {
+		node nn = new node(item);
+		if (head == null) {
+			nn.next = head;
+			head = nn;
+		} else {
+			node last = head;
+			while (last.next != null) {
+				last = last.next;
+			}
+			last.next = nn;
+		}
+	}
+
+	public void insertedafter(node prev_node, int item) {
+		if (prev_node.next == null) {
+			System.out.println("no empty node");
+			return;
+		}
+		node new_node = new node(item);
+		new_node.next = prev_node.next;
+		prev_node.next = new_node;
+	}
+
+	public void display() {
+		node temp = head;
+		if(temp==null) {
+			System.out.println("no element");
+		}else {
+			while (temp!= null) {
+				System.out.println(temp.data);
+				temp = temp.next;
+			}
+		}
+		
+	}
+	public void deletenode(int postion) {
+		if(head==null || postion==0) {
+			System.out.println("no such postion");
+		}
+		
+		node prevnode=head;
+		for(int i=0; i<postion-1;i++) {
+			prevnode=prevnode.next;	
+		}
+		node temp=prevnode.next.next;
+		prevnode.next=temp;
+		
+	}
+	public int gethead() {
+		return head.data;
+	}
+}
+
+public class linked {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		linkedclass link=new linkedclass();
+		link.insertbegin(0);	
+		link.insertend(1);
+		link.insertend(2);
+		link.insertend(3);
+		
+		//link.insertedafter(link.head.next.next,5);
+		
+		//System.out.println(link.gethead());
+		link.display();
+		link.deletenode(2);
+		System.out.println("after deleting	");
+		link.display();
+	}
+
+}
