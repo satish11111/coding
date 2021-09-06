@@ -1,0 +1,15 @@
+import java.util.*;
+public class hashtable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Hashtable<Integer,Integer> table=new Hashtable<>();
+		table.put(1,1001);
+		table.put(2, 1002);
+		table.put(3, 1003);
+		System.out.println(table);
+		table.remove(3);
+		System.out.println(table);
+	}
+
+}
