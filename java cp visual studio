@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.Scanner;
+class code {
+    public static void main(String[] args)throws IOException
+    {
+        if (System.getProperty("ONLINE_JUDGE") == null) {PrintStream ps= new PrintStream(new File("op.txt"));InputStream is= new FileInputStream("ip.txt");System.setIn(is);System.setOut(ps);}
+
+        //code
+    Scanner sc=new Scanner(System.in);
+    int ans=sc.nextInt();
+    System.out.println(ans);
+    int arr[]=new int [10];
+    arr[0]=sc.nextInt();
+    System.out.println(arr[0]);
+    }
+    
+}
+
+
