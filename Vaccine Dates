@@ -1,0 +1,46 @@
+Chef has taken his first dose of vaccine D days ago. He may take the second dose no less than L days and no more than R
+
+ days since his first dose.
+
+
+Determine if Chef is too early, too late, or in the correct range for taking his second dose.
+
+javacode
+
+
+
+
+import java.util.Scanner;
+
+ class Codechef {
+
+	public static void main(String[] args) {
+		try{
+			Scanner sc=new Scanner(System.in);
+		    int testcase=sc.nextInt();
+		    while(testcase-->0) {
+		    	
+				int date=sc.nextInt();
+				int min=sc.nextInt();
+				int max=sc.nextInt();
+				
+				if(date >=min && date<=max) {
+					System.out.println("Take second dose now");
+				}
+				if(date>max ) {
+					System.out.println("Too Late");
+				}
+				if(date<min) {
+					System.out.println("Too Early");
+				}
+				
+		    }
+		  }catch(Exception e){
+		      return;
+		  }
+
+	}
+	
+
+
+}
