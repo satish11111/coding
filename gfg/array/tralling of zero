@@ -1,0 +1,16 @@
+import java.util.*;
+public class Myclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+	 int a=	362800;
+	 int count=0;
+	 while(a!=0) {
+		 if(a%10==0) {
+			 count++;
+		 }
+		 a=a/10;
+	 }
+  System.out.println(count);
+}}
