@@ -1,0 +1,13 @@
+import java.util.*;
+public class Myclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+	  int x=-1;
+	  System.out.println(~x);
+	  int value=1;
+	  System.out.println(value<<3);
+	  int g=33;
+	  System.out.println(g>>3);
+}}
