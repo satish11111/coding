@@ -1,0 +1,8 @@
+list=[8,100,20,40,3,7]
+val=10
+ans=[]
+for x in list:
+  if x<val:
+    ans.append(x)
+    
+print(ans)
