@@ -1,0 +1,22 @@
+
+public class slidingwindow {
+   public static void main(String args[]) {
+	   int arr[]= {1,8,30,-5,20,7};
+	   //1+8+30=39
+	   //
+	   int windowsum=0;
+	   int firstthreevalue=0;
+	   int maxsum=0;
+	   int k=3;
+	   for(int i=0;i<k;i++) {
+		   firstthreevalue+=arr[i];
+	   }
+	   windowsum=firstthreevalue;
+	   for(int j=k;j<arr.length;j++) {
+		   windowsum=windowsum+(arr[j]-arr[j-k]);
+	      maxsum=Math.max(windowsum,maxsum);
+   }
+   System.out.println(maxsum);
+   }
+   
+}
