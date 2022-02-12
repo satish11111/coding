@@ -1,0 +1,118 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class Myclass
+{
+	public static void main (String[] args)
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		Engine[] eng = new Engine[4];
+		
+		for(int i=0;i<eng.length;i++)
+		{
+		    Engine temp = new Engine();
+		    temp.engineid = sc.nextInt();
+		    sc.nextLine();
+		    temp.enginename=sc.nextLine();
+		    temp.enginetype=sc.nextLine();
+		    temp.engineprice=sc.nextDouble();
+		    eng[i] = temp;
+		}
+		
+		sc.nextLine();
+		String type = sc.nextLine();
+		String name = sc.nextLine();
+		
+		double ans = findavgpriceofenginebytype(eng,type);
+		
+		if(ans>0) System.out.println(ans);
+		
+		else System.out.println("There are no engine with given type");
+		
+		Engine[] ans1 = searchenginebyname(eng,name);
+		
+		if(ans1[0]==null) System.out.println("there are no engine with given name");
+		
+		else
+		{
+		    int j=0;
+		    
+		    while(ans1[j]!=null)
+		    {
+		        System.out.println(ans1[j].engineid);
+		        j++;
+		    }
+		}
+		
+	}
+	
+	public static double findavgpriceofenginebytype(Engine[] eng , String type)
+	{
+	    double totalprice=0.0;
+	    double count=0;
+	    
+	    for(int i=0;i<eng.length;i++)
+	    {
+	        if((eng[i].enginetype).equalsIgnoreCase(type))
+	        {
+	            totalprice+=eng[i].engineprice;
+	            count++;
+	        }
+	    }
+	    
+	    if(count==0) return 0.0;
+	    
+	    return totalprice/count;
+	    
+	}
+	
+	public static Engine[] searchenginebyname(Engine[] eng , String name)
+	{
+	    
+	    for(int i=0;i<eng.length;i++)
+	    {
+	        for(int j=1;j<eng.length;j++)
+	        {
+	            if(eng[j].engineid<eng[j-1].engineid)
+	            {
+	                Engine temp = eng[j];
+	                eng[j] = eng[j-1];
+	                eng[j-1] = temp;
+	            }
+	        }
+	    }
+	    
+	    Engine[] ans = new Engine[4];
+	    int j=0;
+	    
+	    for(int i=0;i<eng.length;i++)
+	    {
+	        if((eng[i].enginename).equalsIgnoreCase(name))
+	        {
+	            ans[j] = eng[i];
+	            j++;
+	        }
+	    }
+	    
+	    return ans;
+	}
+}
+
+class Engine
+{
+    public int engineid;
+    public String enginename,enginetype;
+    public double engineprice;
+    
+    Engine()
+    {
+        this.engineid=0;
+        this.enginename="";
+        this.enginetype="";
+        this.engineprice=0.0;
+    }
+}
