@@ -1,0 +1,40 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+import java.util.Scanner;
+ class Solution {
+	static Scanner sc=new Scanner(System.in);
+	//int count=1;
+public	static int count=1;
+	public static void main(String[] args) {
+		try{
+		      int testcase=0;
+		      testcase=sc.nextInt();
+		      while(testcase-->0){
+		        solve();
+		      }
+		      
+		  }catch(Exception e){
+		      return;
+		  }
+
+	}
+
+	private static void solve() {
+	 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      System.out.println("Case #"+count+": "+dif);
+      count=count+1;
+		
+	}
+
+}
