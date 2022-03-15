@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class Cyclesort {
+    public static void main(String[] args) {
+        int arr[]={3,5,2,1,4};
+        //check //swap //move
+        sort(arr,arr.length);
+        System.out.println(Arrays.toString(arr));
+    }
+    public  static void swap(int[] arr, int first, int second){
+       int temp=arr[first];
+       arr[first]=arr[second];
+       arr[second]=temp;
+    }
+    public static void sort(int arr[], int n){
+        //check  //swap //move
+         int i=0;
+         while(i< arr.length){
+             //3 correct =3-1==2
+             int correct=arr[i]-1;
+             if(arr[i]!=arr[correct]){
+                 swap(arr,i,correct);
+             }else{
+                 i++;
+             }
+
+         }
+    }
+}
