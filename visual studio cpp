@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+    freopen("input.txt", "r", stdin);
+   freopen("output.txt", "w", stdout);
+    int arr[]={1,2,3,4,5};
+    for(int i=0;i<5;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    
+    int first=arr[0],last=arr[5-1];
+    cout<<first<<" "<<last;
+}
